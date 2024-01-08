@@ -1,0 +1,150 @@
+:root {
+  --border-radius: 0.3125rem;
+}
+
+/* RESET */
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1601134467661-3d775b999c8b?q=80&w=1375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Weather App */
+.container {
+  background-color: #fff;
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+  min-width: min(37rem, calc(100vw - 2rem));
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.625rem;
+  font-size: 1.125rem;
+  border-radius: var(--border-radius);
+}
+
+form input[type="text"] {
+  border: 3px solid #dcdcdc;
+}
+
+form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: 3px solid #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0062cc;
+  border-color: #0062cc;
+}
+
+.icon img {
+  width: 8.25rem;
+  margin-inline: auto;
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-block: 1.125rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-bottom: 1.125rem;
+  text-transform: capitalize;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details > p {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #dcdcdc;
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+}
+
+.details > p > span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.error {
+  font-size: 1.125rem;
+  color: red;
+}
+
+@media screen and (min-width: 30rem) {
+  form {
+    flex-direction: row;
+  }
+
+  form input {
+    width: auto;
+  }
+
+  .details {
+    flex-direction: row;
+  }
+}
