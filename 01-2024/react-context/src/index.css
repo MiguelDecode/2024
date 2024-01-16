@@ -1,0 +1,68 @@
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Main styles */
+
+.my-page {
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 70%;
+  background-color: #ccc;
+}
+
+.dark {
+  background-color: #fff;
+  filter: invert(1);
+}
