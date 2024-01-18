@@ -11,11 +11,9 @@ const MyPageContext = () => {
       <ThemeProvider>
         <LanguageProvider>
           <AuthProvider>
-            {/* Childrens */}
             <HeaderContext />
             <MainContext />
             <FooterContext />
-            {/* Childrens */}
           </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
