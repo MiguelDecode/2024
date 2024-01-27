@@ -1,0 +1,14 @@
+{
+  "name": "typescript-midudev",
+  "version": "1.0.0",
+  "description": "Tutorial course with Midudev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Miguel Decode",
+  "license": "ISC"
+}
