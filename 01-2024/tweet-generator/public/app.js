@@ -1,5 +1,6 @@
 "use strict";
 // Se recomienda comenzar a definir algunos de los tipos de datos que se van a usar
+// Create a new object Tweet
 const createTweet = () => {
     const id = crypto.randomUUID();
     const message = "";

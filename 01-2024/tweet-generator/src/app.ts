@@ -16,6 +16,7 @@ interface TweetThreat {
   tweets: Tweet[];
 }
 
+// Create a new object Tweet
 const createTweet = (): Tweet => {
   const id = crypto.randomUUID();
   const message = "";
