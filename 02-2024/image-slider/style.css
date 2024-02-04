@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Styles */
+.container {
+  position: absolute;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+}
+
+.slider {
+  position: absolute;
+  inset: 5rem 12.5rem 5rem 5rem;
+  background-color: #000;
+  border-radius: 1.25rem;
+}
+
+.slider .slides {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 320px;
+  background-image: var(--img);
+  background-position: center;
+  background-size: cover;
+  transition: 0.5s;
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.slider .slides:nth-child(1),
+.slider .slides:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(0);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+}
+
+.slider .slides:nth-child(1) .content,
+.slider .slides:nth-child(2) .content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.slider .slides:nth-child(3) {
+  left: calc(50% + 240px);
+  background-size: cover;
+}
+
+.slider .slides:nth-child(4) {
+  left: calc(50% + 500px);
+  background-size: cover;
+}
+
+.slider .slides:nth-child(5) {
+  left: calc(50% + 760px);
+  background-size: cover;
+}
+
+.slider .slides:nth-child(6) {
+  left: calc(50% + 1020px);
+  background-size: cover;
+  opacity: 0;
+}
+
+.content {
+  position: relative;
+  padding: 2.5rem;
+  max-width: 600px;
+  transition: 0.25s;
+  transition-delay: 0s;
+  transform: translateY(40px);
+  z-index: 999;
+  opacity: 0;
+}
+
+.content h2 {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+.content p {
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0.9375rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.buttons span {
+  position: relative;
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: #111;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100vw;
+}
+
+.buttons span::before {
+  content: "";
+  position: absolute;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+  transform: rotate(315deg) translate(2px, 2px);
+}
+
+.buttons span:nth-child(2)::before {
+  transform: rotate(135deg) translate(2px, 2px);
+}
+
+.buttons span:active {
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 56.25rem) {
+  .slider {
+    position: absolute;
+    inset: 2.5rem 2.5rem 12.5rem 2.5rem;
+  }
+
+  .slider .slides {
+    width: 6.25rem;
+    height: 6.25rem;
+    top: initial;
+    bottom: -10.625rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .slider .slides:nth-child(1),
+  .slider .slides:nth-child(2) {
+    top: initial;
+    bottom: 0px;
+  }
+
+  .slider .slides:nth-child(3) {
+    left: 0;
+  }
+
+  .slider .slides:nth-child(4) {
+    left: 7.5rem;
+  }
+
+  .slider .slides:nth-child(5) {
+    left: 15rem;
+  }
+
+  .slider .slides:nth-child(6) {
+    left: 22.5rem;
+  }
+}
