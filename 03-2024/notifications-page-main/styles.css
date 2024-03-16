@@ -1,0 +1,220 @@
+/* Root */
+:root {
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-one: hsl(211, 68%, 94%);
+  --light-grayish-blue-two: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+}
+
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  font-family: "Plus Jakarta Sans";
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Main Styles */
+.main {
+  padding: 1.5rem 1rem;
+}
+
+/* Header */
+.notifications {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+
+  & .title {
+    color: var(--very-dark-blue);
+    font-weight: 800;
+    font-size: 1.25rem;
+    word-spacing: 0.5625rem;
+
+    & .number {
+      background-color: var(--blue);
+      color: var(--white);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 1.5625rem;
+      border-radius: 0.375rem;
+    }
+  }
+
+  & .mark {
+    color: var(--dark-grayish-blue);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      color: var(--blue);
+    }
+  }
+}
+
+/* Posts */
+.post {
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 0.8125rem;
+  padding: 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: var(--dark-grayish-blue);
+  margin: 0px auto 10px;
+
+  & .image {
+    width: 2.4375rem;
+    height: 2.4375rem;
+  }
+
+  & section {
+    flex-grow: 1;
+
+    & .name {
+      font-weight: bold;
+      color: var(--very-dark-blue);
+
+      &:hover {
+        color: var(--blue);
+      }
+    }
+
+    & .reaction {
+      font-weight: bold;
+
+      &:hover {
+        color: var(--blue);
+      }
+    }
+
+    & .group {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    & .not-read {
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      margin-left: 0.5rem;
+      background-color: var(--red);
+    }
+
+    & .time {
+      color: var(--grayish-blue);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    & .message {
+      border: 1px solid var(--light-grayish-blue-two);
+      margin-top: 0.75rem;
+      padding: 1rem;
+      border-radius: 0.3125rem;
+
+      &:hover {
+        background-color: var(--light-grayish-blue-one);
+      }
+    }
+  }
+
+  & .picture {
+    width: 2.4375rem;
+    height: 2.4375rem;
+  }
+}
+
+.post:has(.not-read) {
+  background-color: var(--very-light-grayish-blue);
+}
+
+/* Responsive MediaQuerries */
+@media screen and (min-width: 48rem) {
+  body {
+    background-color: var(--very-light-grayish-blue);
+    display: grid;
+    place-content: center;
+  }
+
+  .main {
+    background-color: var(--white);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    width: 48rem;
+  }
+
+  .post {
+    font-size: 1rem;
+    max-width: 35rem;
+  }
+}
