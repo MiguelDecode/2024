@@ -1,0 +1,19 @@
+---
+const {
+  post: { id, title, description, content, author, created_at },
+} = Astro.props;
+---
+
+<a href={`http://localhost:4321/posts/${id}`}>
+  <article
+    class="bg-[#1F2937] flex flex-col gap-4 text-white max-w-sm px-5 py-6"
+  >
+    <img src="/tree.jpg" alt="Tree in a forest" class="rounded" />
+    <h2 class="text-2xl font-bold">{title}</h2>
+    <p>{description}</p>
+    <p class="text-zinc-300 flex-grow">{content.slice(0, 200) + "..."}</p>
+    <time class="text-zinc-300" datetime="10/12/2023"
+      >{new Date(created_at).toLocaleDateString()} - 16 min read</time
+    >
+  </article>
+</a>

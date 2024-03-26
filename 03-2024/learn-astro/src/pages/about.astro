@@ -1,0 +1,11 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import { Button } from "../components/Button";
+
+export const prerender = false;
+---
+
+<DefaultLayout>
+  <h1>Bienvenido a mi página de About.</h1>
+  <Button client:visible />
+</DefaultLayout>

@@ -1,0 +1,37 @@
+---
+import type { GetStaticPaths } from "astro";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+
+export async function getStaticPaths() {
+  const response = await fetch("http://localhost:3000/posts");
+  const posts = await response.json();
+
+  return posts.map((post) => {
+    return {
+      params: { id: post.id },
+    };
+  });
+}
+
+const { id } = Astro.params;
+
+const postResponse = await fetch(`http://localhost:3000/posts/${id}`);
+const post = await postResponse.json();
+const { title, description, content, created_at } = post;
+---
+
+<DefaultLayout>
+  <div class="">
+    <article class="flex flex-col gap-4 text-black mx-auto max-w-4xl px-5 py-6">
+      <img src="/tree.jpg" alt="Tree in a forest" class="rounded" />
+      <h2
+        class="text-4xl text-gray-700 font-bold text-end underline decoration-4"
+      >
+        {title}
+      </h2>
+      <p class="text-justify leading-8 first-letter:text-8xl -mt-16">
+        {content}
+      </p>
+    </article>
+  </div>
+</DefaultLayout>
