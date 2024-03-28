@@ -1,0 +1,17 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import PostCard from "@/components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<MainLayout title="Blog con Astro">
+  <div class="max-w-content-size mx-auto w-full">
+    <section class="mt-6 w-full">
+      <ul class="space-y-8">
+        {posts.map((post) => <PostCard {...post} />)}
+      </ul>
+    </section>
+  </div>
+</MainLayout>
