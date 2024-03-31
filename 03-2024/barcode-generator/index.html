@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barcode Generator</title>
+
+    <!-- Barcode CDN -->
+    <script src="https://unpkg.com/jsbarcode@latest/dist/JsBarcode.all.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JavaScript -->
+    <script src="./main.js" defer></script>
+  </head>
+
+  <body>
+    <main class="card">
+      <h1 class="card__title">Barcode Generator</h1>
+      <form class="card__form" id="form">
+        <input class="card__input" type="text" id="input" />
+        <button class="card__btn" type="submit" id="btn-generate">
+          Barcode Generator
+        </button>
+      </form>
+      <svg class="card__barcode" id="barcode"></svg>
+    </main>
+  </body>
+</html>
