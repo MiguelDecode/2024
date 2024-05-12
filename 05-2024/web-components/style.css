@@ -1,0 +1,93 @@
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Basic styles */
+body {
+  background-color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  max-width: min(1024px, 100% - 4rem);
+}
+
+.card {
+  --size: 64px;
+
+  display: inline-grid;
+  place-items: center;
+  gap: 1rem;
+  grid-template-columns: var(--size) 1fr;
+  border: 5px solid black;
+  border-bottom-color: slateblue;
+  border-right-color: deeppink;
+  border-radius: var(--size);
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+
+  & img {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+  }
+
+  & span {
+    font-family: Jost, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
