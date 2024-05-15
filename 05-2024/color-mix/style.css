@@ -1,0 +1,109 @@
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* My styles */
+body {
+  background-color: #171717;
+  display: grid;
+  place-content: center;
+}
+
+button {
+  --color: purple;
+  --dark-color: color-mix(in srgb, var(--color), black 25%);
+  --light-color: color-mix(in srgb, var(--color), white 25%);
+  --gradient: linear-gradient(transparent, #0006);
+
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  background:var(--gradient), var(--color);
+  color: #fff;
+  font-family: Jost, sans-serif;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+
+  border: 1px solid var(--dark-color);
+  border-bottom-width: 8px;
+  border-top-color: var(--light-color);
+
+  transition: transform .3s, border .3s;
+
+  & svg {
+    --size: 24px;
+
+    width: var(--size);
+    height: var(--size);
+  }
+
+  &.rounded {
+    border-radius: 5px;
+  }
+
+  &:disabled {
+    --color: grey;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+
+  &:active:not(:disabled) {
+    border-bottom-width: 1px;
+    transform: translateY(7px);
+    background-color: var(--dark-color);
+  }
+
+}
