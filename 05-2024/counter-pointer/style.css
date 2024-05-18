@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "DSEG7";
+  src: url("./assets/DSEG7Classic-Bold.woff2") format("woff2"),
+    url("./assets/DSEG7Classic-Bold.woff") format("woff"),
+    url("./assets/DSEG7Classic-Bold.ttf") format("truetype");
+}
+
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+/* My styles */
+body {
+  background: #000;
+  display: grid;
+  place-content: center;
+}
+
+.counter {
+  --color: #e00;
+  --dark-color: color-mix(in srgb, var(--color), black 85%);
+
+  font-family: "DSEG7", monospace;
+  font-size: 6rem;
+  color: var(--color);
+  display: flex;
+  position: relative;
+}
+
+.digits::before {
+    content: "888888";
+    color: var(--dark-color);
+    position: absolute;
+    z-index: -1;
+} 
