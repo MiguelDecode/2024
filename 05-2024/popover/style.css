@@ -1,0 +1,109 @@
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  display: grid;
+  place-content: center;
+  background: #1b1b1b;
+}
+
+button {
+  padding: 0.625rem 3.125rem;
+  border: 0.125rem solid #fff;
+  border-radius: 0.3125rem;
+  background-color: rgb(10, 129, 221);
+  color: #fff;
+  font-size: 1.25rem;
+  transition-duration: 0.5s;
+
+  &:hover,
+  &:focus {
+    background-color: rgb(0, 208, 255);
+    color: #000;
+    border: 2px solid rgb(10, 129, 221);
+  }
+}
+
+#modal {
+    text-align: center;
+}
+
+[popover] {
+  padding: 0.625rem 3.125rem;
+  width: 25dvw;
+  border: 0.125rem solid #fff;
+  border-radius: 0.3125rem;
+  background-color: rgb(10, 129, 221);
+  color: #fff;
+  line-height: 1.75;
+
+  transition: translate 0.7s ease-in-out,
+    display 0.7s ease-in-out allow-discrete;
+  translate: 0 -100dvh;
+}
+
+[popover]:popover-open {
+  translate: 0 -20dvh;
+}
+
+[popover]::backdrop {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@starting-style {
+  [popover]:popover-open {
+    translate: 0 -100dvh;
+  }
+}

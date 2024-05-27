@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popover new API study</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <main>
+      <button popovertarget="modal">Click Me!</button>
+
+      <div id="modal" popover="manual">
+        <h1>Modal</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, minima.
+          Laboriosam, quidem consequatur assumenda repellendus ullam eos
+          corrupti quae quo molestiae deserunt? Eos sed voluptatem natus esse
+          maxime deserunt odit!
+        </p>
+        <button popovertarget="modal" popover-action="hide">Close</button>
+      </div>
+    </main>
+  </body>
+</html>
