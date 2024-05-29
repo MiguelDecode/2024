@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --bg-clr: #ddd;
+  --text-clr: #b9b9b9;
+  --light-clr: #fff;
+  --soft-clr: #919191;
+  --dark-clr: #292929;
+  --progress-bg: #505050;
+  --active-clr: #1db954;
+  --active-hover: #189945;
+}
+
+/* My minimal reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Styles */
+
+body {
+  background-color: var(--bg-clr);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  padding: 1rem;
+
+  & .song-info {
+    background-color: #000;
+    margin-inline: 0.9375rem;
+    padding: 0.9375rem 0.9375rem 0.3125rem 9.375rem;
+    border-radius: 0.9375rem 0.9375rem 0 0;
+
+    & .song-name {
+      color: var(--text-clr);
+      font-size: 0.875rem;
+      margin: 0.1875rem 0 1.25rem;
+    }
+
+    & .artist-name {
+      color: var(--light-clr);
+      font-weight: bold;
+      font-size: 1.125rem;
+    }
+
+    & .progress-bar {
+      background-color: var(--progress-bg);
+      border-radius: 1.25rem;
+      cursor: pointer;
+
+      & .fill-bar {
+        width: 0%;
+        height: 0.375rem;
+        border-radius: 1.25rem;
+        background-color: var(--active-clr);
+      }
+    }
+
+    & .time {
+      font-size: 0.9375rem;
+      color: var(--text-clr);
+      margin: 0.625rem 0;
+    }
+  }
+
+  & .disk {
+    max-width: 7.5rem;
+
+    & .cover {
+      width: 9.0625rem;
+      height: 9.0625rem;
+      position: absolute;
+      top: 0.625rem;
+      left: 0.625rem;
+      background: url("assets/1.jpg");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: cover;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+
+      &.active {
+        animation: rotate 6s linear 0s infinite forwards;
+      }
+    }
+
+    & .circle {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 14%;
+      top: 25%;
+      background-color: #fff;
+      z-index: 1;
+      border-radius: 50%;
+    }
+  }
+
+  & .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--dark-clr);
+    width: 28.125rem;
+    height: 6.25rem;
+    border-radius: 1.25rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+    & i {
+      padding: 1.875rem 0.5rem;
+      font-size: 2.1875rem;
+      cursor: pointer;
+      color: var(--soft-clr);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--light-clr);
+      }
+    }
+
+    & .play-btn {
+      background-color: var(--active-clr);
+      color: var(--light-clr);
+      padding: 15px 15px 14px 17px;
+      font-size: 1.75rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--active-hover);
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
