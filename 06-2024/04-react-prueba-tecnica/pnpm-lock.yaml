@@ -16,12 +16,18 @@ dependencies:
     version: 18.3.1(react@18.3.1)
 
 devDependencies:
+  '@playwright/test':
+    specifier: ^1.44.1
+    version: 1.44.1
+  '@types/node':
+    specifier: ^20.14.2
+    version: 20.14.2
   standard:
     specifier: ^17.1.0
     version: 17.1.0
   vite:
     specifier: ^5.2.0
-    version: 5.2.12
+    version: 5.2.12(@types/node@20.14.2)
 
 packages:
 
@@ -539,6 +545,14 @@ packages:
       fastq: 1.17.1
     dev: true
 
+  /@playwright/test@1.44.1:
+    resolution: {integrity: sha512-1hZ4TNvD5z9VuhNJ/walIjvMVvYkZKf71axoF/uiAqpntQJXpG64dlXhoDXE3OczPuTuvjf/M5KWFg5VAVUS3Q==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright: 1.44.1
+    dev: true
+
   /@rollup/rollup-android-arm-eabi@4.18.0:
     resolution: {integrity: sha512-Tya6xypR10giZV1XzxmH5wr25VcZSncG0pZIjfePT0OVBvqNEurzValetGNarVrGiq66EBVAFn15iYX4w6FKgQ==}
     cpu: [arm]
@@ -687,6 +701,11 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
+  /@types/node@20.14.2:
+    resolution: {integrity: sha512-xyu6WAMVwv6AKFLB+e/7ySZVr/0zLCzOa7rSpq6jNwpqOrUbcACDWC+53d4n2QHOnDou0fbIsg8wZu/sxrnI4Q==}
+    dependencies:
+      undici-types: 5.26.5
+
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
@@ -702,7 +721,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.24.6(@babel/core@7.24.6)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.12
+      vite: 5.2.12(@types/node@20.14.2)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1560,6 +1579,14 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
+  /fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -2247,6 +2274,22 @@ packages:
       load-json-file: 5.3.0
     dev: true
 
+  /playwright-core@1.44.1:
+    resolution: {integrity: sha512-wh0JWtYTrhv1+OSsLPgFzGzt67Y7BE/ZS3jEqgGBlp2ppp1ZDj8c+9IARNW4dwf1poq5MgHreEM2KV/GuR4cFA==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: true
+
+  /playwright@1.44.1:
+    resolution: {integrity: sha512-qr/0UJ5CFAtloI3avF95Y0L1xQo6r3LQArLIg/z/PoGJ6xa+EwzrwO5lpNr/09STxdHuUoP2mvuELJS+hLdtgg==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.44.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /possible-typed-array-names@1.0.0:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
     engines: {node: '>= 0.4'}
@@ -2686,6 +2729,9 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
   /update-browserslist-db@1.0.16(browserslist@4.23.0):
     resolution: {integrity: sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==}
     hasBin: true
@@ -2708,7 +2754,7 @@ packages:
     engines: {node: '>=0.10.48'}
     dev: true
 
-  /vite@5.2.12:
+  /vite@5.2.12(@types/node@20.14.2):
     resolution: {integrity: sha512-/gC8GxzxMK5ntBwb48pR32GGhENnjtY30G4A0jemunsBkiEZFw60s8InGpN8gkhHEkjnRK1aSAxeQgwvFhUHAA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -2736,6 +2782,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.14.2
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
