@@ -12,7 +12,7 @@ const question = {
   title:
     "¿Cuál de las siguientes propiedades de CSS se utiliza para cambiar el tamaño del texto en un elemento HTML?",
   options: ["font-size", "text-size", "font-style", "text-style"],
-  result: 'font-size'
+  result: "font-size",
 };
 
 // Evento de escucha del socket
@@ -22,12 +22,21 @@ io.on("connection", (socket) => {
   //   Escuchar petición de pregunta por parte del cliente
   socket.on("getQuestion", () => {
     // Mandar una pregunta al cliente
-    socket.emit("question", question);
+
+    const newQuestion = { title: question.title, options: question.options };
+
+    socket.emit("question", newQuestion);
   });
 
-  //   Escuchar al cliente. Primer párametro identificador
+  //   Escuchar la respuesta del cliente. Primer párametro identificador
   socket.on("response", (data) => {
-    console.log(data);
+    // Comprobar la respuesta y enviar al cliente si es correcta o no.
+    let isCorrect =
+      data === question.result
+        ? "La respuesta es correcta"
+        : "La respuesta es incorrecta";
+
+    socket.emit("result", isCorrect);
   });
 });
 

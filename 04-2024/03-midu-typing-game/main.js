@@ -10,7 +10,7 @@ const $wpm = document.getElementById("results-wpm");
 const $accuracy = document.getElementById("results-accuracy");
 const $button = document.getElementById("reload");
 
-const INITIAL_TIME = 10;
+const INITIAL_TIME = 30;
 
 const TEXT =
   "the quick brown fox jumps over the lazy dog and midudev is trying to clone monkey type for fun and profit using vanilla js for the typing test speed";

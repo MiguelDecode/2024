@@ -55,3 +55,40 @@ p {
 
 /* My styles */
 
+h1 {
+  color: #0099ffff;
+}
+
+body {
+  background-color: #dbfbff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.link {
+  color: red;
+}
+
+.link:active {
+  outline: 10px solid blue;
+}
+
+.link:hover {
+  outline: 5px solid red;
+}
+
+#open {
+  background-color: #09f;
+  color: white;
+  border: 0;
+  padding: 0.5rem 1rem;
+}
+
+li:first-child {
+  color: pink;
+}
+
+li:last-child {
+  color: purple;
+}
+

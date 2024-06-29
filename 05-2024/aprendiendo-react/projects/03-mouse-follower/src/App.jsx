@@ -8,6 +8,7 @@ const FollowMouse = () => {
     setEnable(!enable);
   };
 
+  // Pointer move
   useEffect(() => {
     console.log("useEffect", { enable });
 
@@ -26,6 +27,20 @@ const FollowMouse = () => {
       setPosition({ x: -40, y: -40 });
     };
   }, [enable]);
+
+  // Change body classname
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enable)
+  
+    return () => {
+      document.body.classList.remove('no-cursor')
+    }
+
+    // undefined => Si no hay dependecias se ejecuta en cada render del componente.
+    // [] => Si tiene dependencias pero esta vacio [] se ejecuta una unica vez cuando se monta el componente.
+    // [enable] => Si tiene dependecias se ejecuta cuando cambia la dependencia y cuando se monta el componente.
+  }, [enable])
+  
 
   return (
     <>

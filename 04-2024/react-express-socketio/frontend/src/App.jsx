@@ -10,12 +10,18 @@ const App = () => {
   // Primera petición de una pregunta
   useEffect(() => {
     socket.emit("getQuestion");
-  }, [question]);
+  }, []);
 
   // Recibir una respuesta del servidor
-  socket.on("question", (data) => {
-    console.log(data);
-    // setQuestion(data)
+  socket.on("question", (question) => {
+    setQuestion(question);
+  });
+
+  // Recibir desde el server si la respuesta dada es correcta
+  socket.on("result", (isCorrect) => {
+    // !: Se ejecuta 3 veces, necesario revisar porque.
+    console.log("Recibiendo si la respuesta es correcta");
+    console.log(isCorrect);
   });
 
   const handleSubmit = (event) => {
