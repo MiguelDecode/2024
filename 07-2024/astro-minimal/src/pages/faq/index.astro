@@ -1,0 +1,17 @@
+---
+import NavBar from "@components/NavBar.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+const { title, description } = Astro.props;
+---
+
+<BaseLayout
+  title="Preguntas frecuentes"
+  description="Aquí puedes encontrar las preguntas más frecuentes sobre la página."
+>
+  <div>
+    <h1>FAQ</h1>
+    <p>Todas las repuestas a tus preguntas sobre la página</p>
+  </div>
+
+  <NavBar />
+</BaseLayout>

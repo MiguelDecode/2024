@@ -1,0 +1,38 @@
+---
+const { data } = Astro.props;
+---
+
+<style>
+  .sticker {
+    background-color: #111;
+    width: 300px;
+    padding: 1rem;
+    display: flex;
+    gap: 1.25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    & img {
+      --size: 8rem;
+
+      image-rendering: pixelated;
+      width: var(--size);
+      height: var(--size);
+    }
+
+    & span {
+      background-color: darkred;
+      padding: .5rem 1rem;
+      color: #fff;
+      border-radius: 1rem;
+    }
+  }
+</style>
+
+<div class="sticker">
+  <h2>{data.name}</h2>
+  <img src={data.url} alt={data.name} />
+  <span>{data.category}</span>
+</div>

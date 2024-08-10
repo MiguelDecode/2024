@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.11.3"
+    "@fontsource/merienda": "^5.0.13",
+    "astro": "^4.11.3",
+    "canvas-confetti": "^1.9.3",
+    "merienda": "link:@f@fontsource-variable/merienda"
   }
 }

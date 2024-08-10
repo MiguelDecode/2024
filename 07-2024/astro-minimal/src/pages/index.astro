@@ -1,16 +1,59 @@
 ---
+import NavBar from "../components/NavBar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import stickers from "../data/stickers.json";
+import Sticker from "../components/Sticker.astro";
+import AstroHeart from "@components/AstroHeart.astro";
+import coworking from "../assets/coworking.webp";
 
+// import "@fontsource-variable/merienda"
+
+console.log(coworking);
+console.log("Código desde el servidor");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<style>
+  .stickers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  h1 {
+    font-family: "Merienda Variable";
+  }
+</style>
+
+<script>
+  console.log("Código desde el cliente");
+
+  import confetti from "canvas-confetti";
+
+  const button = document.querySelector("[data-celebrate-button]");
+
+  button.addEventListener("click", () => confetti());
+</script>
+
+<BaseLayout
+  title="Página principal"
+  description="Esta es mi página principal donde muestro todo lo relevante al sitio web"
+>
+  <h1>Bienvenido a Astro - Página principal</h1>
+
+  <img
+    src={coworking.src}
+    width={coworking.width / 2}
+    height={coworking.height / 2}
+    alt="Coworking ManzDev Avatar"
+  />
+
+  <button data-celebrate-button>Celebrate!!!</button>
+
+  <!-- <AstroHeart heart="❤️❤️❤️❤️❤️" /> -->
+
+  <div class="stickers">
+    {stickers.map((data) => <Sticker data={data} />)}
+  </div>
+
+  <NavBar />
+</BaseLayout>
